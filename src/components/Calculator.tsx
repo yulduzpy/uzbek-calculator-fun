@@ -88,7 +88,7 @@ const Calculator = () => {
             <Button variant="operator" size="lg" onClick={() => inputOperation('/')} className="text-teal-100">
               ÷
             </Button>
-            <Button variant="operator" size="lg" onClick={() => inputOperation('*')}>
+            <Button variant="operator" size="lg" onClick={() => inputOperation('*')} className="text-sky-100">
               ×
             </Button>
 
