@@ -102,7 +102,7 @@ const Calculator = () => {
             <Button variant="number" size="lg" onClick={() => inputNumber('9')}>
               9
             </Button>
-            <Button variant="operator" size="lg" onClick={() => inputOperation('-')}>
+            <Button variant="operator" size="lg" onClick={() => inputOperation('-')} className="text-sky-200">
               −
             </Button>
 
