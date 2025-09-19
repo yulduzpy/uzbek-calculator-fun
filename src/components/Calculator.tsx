@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-
 const Calculator = () => {
   const [display, setDisplay] = useState('0');
   const [previousValue, setPreviousValue] = useState<number | null>(null);
   const [operation, setOperation] = useState<string | null>(null);
   const [waitingForOperand, setWaitingForOperand] = useState(false);
-
   const inputNumber = (num: string) => {
     if (waitingForOperand) {
       setDisplay(num);
@@ -16,24 +14,19 @@ const Calculator = () => {
       setDisplay(display === '0' ? num : display + num);
     }
   };
-
   const inputOperation = (nextOperation: string) => {
     const inputValue = parseFloat(display);
-
     if (previousValue === null) {
       setPreviousValue(inputValue);
     } else if (operation) {
       const currentValue = previousValue || 0;
       const newValue = calculate(currentValue, inputValue, operation);
-
       setDisplay(`${parseFloat(newValue.toFixed(7))}`);
       setPreviousValue(newValue);
     }
-
     setWaitingForOperand(true);
     setOperation(nextOperation);
   };
-
   const calculate = (firstValue: number, secondValue: number, operation: string): number => {
     switch (operation) {
       case '+':
@@ -48,34 +41,27 @@ const Calculator = () => {
         return secondValue;
     }
   };
-
   const performCalculation = () => {
     const inputValue = parseFloat(display);
-
     if (previousValue !== null && operation) {
       const newValue = calculate(previousValue, inputValue, operation);
-      
       if (operation === '/' && inputValue === 0) {
         setDisplay('Xato: 0 ga bo\'lib bo\'lmaydi!');
       } else {
         setDisplay(`${parseFloat(newValue.toFixed(7))}`);
       }
-      
       setPreviousValue(null);
       setOperation(null);
       setWaitingForOperand(true);
     }
   };
-
   const clear = () => {
     setDisplay('0');
     setPreviousValue(null);
     setOperation(null);
     setWaitingForOperand(false);
   };
-
-  return (
-    <div className="min-h-screen bg-calculator-bg flex items-center justify-center p-4">
+  return <div className="min-h-screen bg-calculator-bg flex items-center justify-center p-4">
       <Card className="bg-calculator-card border-border/20 p-6 rounded-3xl shadow-2xl animate-fade-in max-w-sm w-full">
         <div className="space-y-6">
           {/* Header */}
@@ -96,15 +82,10 @@ const Calculator = () => {
           {/* Buttons Grid */}
           <div className="grid grid-cols-4 gap-3">
             {/* First Row */}
-            <Button 
-              variant="clear" 
-              size="lg" 
-              onClick={clear}
-              className="col-span-2"
-            >
+            <Button variant="clear" size="lg" onClick={clear} className="col-span-2">
               Tozalash
             </Button>
-            <Button variant="operator" size="lg" onClick={() => inputOperation('/')}>
+            <Button variant="operator" size="lg" onClick={() => inputOperation('/')} className="text-teal-100">
               ÷
             </Button>
             <Button variant="operator" size="lg" onClick={() => inputOperation('*')}>
@@ -149,22 +130,12 @@ const Calculator = () => {
             <Button variant="number" size="lg" onClick={() => inputNumber('3')}>
               3
             </Button>
-            <Button 
-              variant="equals" 
-              size="lg" 
-              onClick={performCalculation}
-              className="row-span-2"
-            >
+            <Button variant="equals" size="lg" onClick={performCalculation} className="row-span-2">
               =
             </Button>
 
             {/* Fifth Row */}
-            <Button 
-              variant="number" 
-              size="lg" 
-              onClick={() => inputNumber('0')}
-              className="col-span-2"
-            >
+            <Button variant="number" size="lg" onClick={() => inputNumber('0')} className="col-span-2">
               0
             </Button>
             <Button variant="number" size="lg" onClick={() => inputNumber('.')}>
@@ -173,8 +144,6 @@ const Calculator = () => {
           </div>
         </div>
       </Card>
-    </div>
-  );
+    </div>;
 };
-
 export default Calculator;
