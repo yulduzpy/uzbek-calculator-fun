@@ -85,7 +85,7 @@ const Calculator = () => {
             <Button variant="clear" size="lg" onClick={clear} className="col-span-2">
               Tozalash
             </Button>
-            <Button variant="operator" size="lg" onClick={() => inputOperation('/')} className="text-teal-100">
+            <Button variant="operator" size="lg" onClick={() => inputOperation('/')} className="text-cyan-200">
               ÷
             </Button>
             <Button variant="operator" size="lg" onClick={() => inputOperation('*')} className="text-sky-100">
