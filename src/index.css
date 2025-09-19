@@ -2,39 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Modern Calculator Design System - Gradients and animations */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Background gradients */
+    --background: 240 15% 9%;
+    --background-secondary: 240 12% 12%;
+    --foreground: 240 5% 96%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Calculator specific colors */
+    --calculator-bg: 240 15% 9%;
+    --calculator-card: 240 10% 14%;
+    --calculator-display: 240 8% 18%;
+    
+    /* Button colors */
+    --button-number: 240 8% 22%;
+    --button-number-hover: 240 8% 28%;
+    --button-operator: 260 70% 55%;
+    --button-operator-hover: 260 70% 65%;
+    --button-equals: 160 70% 50%;
+    --button-equals-hover: 160 70% 60%;
+    --button-clear: 10 80% 55%;
+    --button-clear-hover: 10 80% 65%;
+    
+    /* Text colors */
+    --text-primary: 240 5% 96%;
+    --text-secondary: 240 5% 80%;
+    --text-operator: 240 5% 96%;
+    
+    /* Effects */
+    --glow-primary: 260 70% 55%;
+    --glow-equals: 160 70% 50%;
+    
+    /* Original design tokens */
+    --card: 240 10% 14%;
+    --card-foreground: 240 5% 96%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 240 10% 14%;
+    --popover-foreground: 240 5% 96%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 260 70% 55%;
+    --primary-foreground: 240 5% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 240 8% 22%;
+    --secondary-foreground: 240 5% 96%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 8% 18%;
+    --muted-foreground: 240 5% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 260 70% 55%;
+    --accent-foreground: 240 5% 96%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 10 80% 55%;
+    --destructive-foreground: 240 5% 96%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 240 8% 25%;
+    --input: 240 8% 18%;
+    --ring: 260 70% 55%;
 
     --radius: 0.5rem;
 
